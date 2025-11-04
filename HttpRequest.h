@@ -47,7 +47,7 @@ HttpRequest::HttpRequest(std::string str){
         tmpc_=tmp_.substr(posm+1);
         while(tmpc_[0]==' ')tmpc_=tmpc_.substr(1);
         header_[tmph_]=tmpc_;
-    }//if(url_[0]='/')url_=url_.substr(1);
+    }if(url_[0]='/')url_=url_.substr(1);
     body_= str.substr(pos1+sep,str.size()-pos1-sep-1);
     int query_index=url_.find("?");
     if(query_index!=std::string::npos){
